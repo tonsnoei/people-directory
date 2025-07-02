@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Employee Directory</h1>
+            <div class="controls">
+                <button id="addPersonBtn">Add Person</button>
+                <button id="manageDepartmentsBtn">Manage Departments</button>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="people-list" id="peopleList">
+                <!-- People cards will be rendered here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Person Modal -->
+    <div id="personModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="personModalTitle">Add Person</h2>
+            <form id="personForm">
+                <input type="hidden" id="personId">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+                
+                <label for="role">Role</label>
+                <input type="text" id="role" required>
+                
+                <label for="description">Description</label>
+                <textarea id="description" required></textarea>
+                
+                <label for="image">Image URL</label>
+                <input type="text" id="image">
+                
+                <label for="department">Department</label>
+                <select id="department" required></select>
+                
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Departments Modal -->
+    <div id="departmentsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Manage Departments</h2>
+            <form id="departmentForm">
+                <label for="departmentName">New Department</label>
+                <div class="department-input">
+                    <input type="text" id="departmentName" required>
+                    <button type="submit">Add</button>
+                </div>
+            </form>
+            <ul id="departmentList"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

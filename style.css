@@ -1,0 +1,252 @@
+:root {
+    --primary: #1a73e8;
+    --primary-dark: #0d47a1;
+    --background: #f0f2f5;
+    --card-bg: #ffffff;
+    --text: #202124;
+    --border: #dadce0;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.person-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.person-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.person-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.person-info {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.person-name {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.person-role {
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.person-department {
+    display: inline-block;
+    background: rgba(26, 115, 232, 0.1);
+    color: var(--primary-dark);
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.person-description {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #5f6368;
+    line-height: 1.5;
+}
+
+.person-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit, .btn-delete {
+    padding: 8px 12px;
+    font-size: 0.875rem;
+    border: 1px solid transparent;
+}
+
+.btn-edit {
+    background-color: #fff;
+    color: var(--primary);
+    border-color: var(--border);
+}
+
+.btn-delete {
+    background-color: #fff;
+    color: #ea4335;
+    border-color: var(--border);
+}
+
+.btn-edit:hover {
+    background-color: rgba(26, 115, 232, 0.1);
+}
+
+.btn-delete:hover {
+    background-color: rgba(234, 67, 53, 0.1);
+}
+
+.department-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.department-name {
+    flex-grow: 1;
+    font-size: 1.1rem;
+}
+
+.department-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: slideDown 0.3s;
+}
+
+@keyframes slideDown {
+    from {top: -50px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: 500;
+}
+
+input, textarea, select {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.department-input {
+    display: flex;
+    gap: 10px;
+}
+
+.department-input button {
+    margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        margin: 5% auto;
+    }
+}
