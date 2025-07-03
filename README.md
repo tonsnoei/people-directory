@@ -2,6 +2,9 @@
 
 A privacy-first employee directory application built with vanilla HTML and JavaScript that runs entirely in your browser without requiring any server infrastructure.
 
+## Usage
+Open the [People Directory from Github Pages](https://tonsnoei.github.io/people-directory/)
+
 ## 🔒 Privacy & GDPR Compliance
 
 This application is designed with privacy at its core:
