@@ -21,17 +21,17 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1920px;
     margin: 0 auto;
     padding: 20px;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 300px) 1fr;
     align-items: center;
+    gap: 10px;
     margin-bottom: 30px;
-    flex-wrap: wrap;
 }
 
 header h1 {
@@ -39,9 +39,58 @@ header h1 {
     font-weight: 500;
 }
 
+.search-container {
+    position: relative;
+    margin: 0 auto 1rem;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    align-items: center; /* Vertical centering */
+}
+
+#searchInput {
+    width: 100%;
+    padding: 8px 32px 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.clear-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+    display: none;
+}
+
+.clear-btn:hover {
+    color: #666;
+}
+
 .controls {
     display: flex;
     gap: 10px;
+    justify-self: end;
+}
+
+#backupBtn {
+    background-color: #28a745;
+}
+
+#backupBtn:hover {
+    background-color: #218838;
+}
+
+#restoreBtn {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+#restoreBtn:hover {
+    background-color: #e0a800;
 }
 
 button {
@@ -59,10 +108,12 @@ button:hover {
     background-color: var(--primary-dark);
 }
 
-.content {
+/* Grid: fixed ~250px columns, centered */
+.people-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, 200px);
     gap: 20px;
+    justify-content: center;
 }
 
 .person-card {
@@ -73,6 +124,8 @@ button:hover {
     transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
+    max-width: 200px;
+    width: 100%;
 }
 
 .person-card:hover {
@@ -100,6 +153,12 @@ button:hover {
     color: var(--primary);
     font-weight: 500;
     margin-bottom: 5px;
+}
+
+.person-location {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 8px;
 }
 
 .person-department {
@@ -182,11 +241,13 @@ button:hover {
 
 .modal-content {
     background-color: var(--card-bg);
-    margin: 10% auto;
+    margin: 5vh auto;
     padding: 30px;
     border-radius: 8px;
     width: 90%;
     max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
     position: relative;
     animation: slideDown 0.3s;
 }
@@ -235,17 +296,23 @@ input, textarea, select {
 
 @media (max-width: 768px) {
     .content {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, 200px);
+        justify-content: center;
     }
     
     header {
-        flex-direction: column;
-        align-items: flex-start;
+        grid-template-columns: 1fr;
         gap: 15px;
+    }
+    .search-container, .controls {
+        justify-self: flex-start;
     }
 }
 
 @media (max-width: 480px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
     .modal-content {
         margin: 5% auto;
     }

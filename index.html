@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Directory</title>
+    <title>People Directory</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Employee Directory</h1>
+            <h1>People Directory</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search people...">
+                <span id="searchClearBtn" class="clear-btn">&times;</span>
+            </div>
             <div class="controls">
                 <button id="addPersonBtn">Add Person</button>
                 <button id="manageDepartmentsBtn">Manage Departments</button>
+                <button id="backupBtn">Backup DB</button>
+                <button id="restoreBtn">Restore DB</button>
+                <button id="toggleEditModeBtn">Enable Edit Mode</button>
             </div>
         </header>
 
@@ -36,14 +43,19 @@
                 <label for="role">Role</label>
                 <input type="text" id="role" required>
                 
-                <label for="description">Description</label>
-                <textarea id="description" required></textarea>
+                <label for="description">Description (optional)</label>
+                <textarea id="description"></textarea>
                 
-                <label for="image">Image URL</label>
-                <input type="text" id="image">
+                <label for="imageFile">Image</label>
+                <input type="file" id="imageFile" accept="image/*">
+                <input type="hidden" id="image">
+                <img id="imagePreview" src="#" alt="Preview" style="max-width: 200px; display: none; margin-top: 10px;">
                 
                 <label for="department">Department</label>
                 <select id="department" required></select>
+
+                <label for="location">Location (optional)</label>
+                <input type="text" id="location">
                 
                 <button type="submit">Save</button>
             </form>
@@ -56,11 +68,14 @@
             <span class="close">&times;</span>
             <h2>Manage Departments</h2>
             <form id="departmentForm">
-                <label for="departmentName">New Department</label>
-                <div class="department-input">
-                    <input type="text" id="departmentName" required>
-                    <button type="submit">Add</button>
-                </div>
+                <input type="hidden" id="departmentId">
+                <label for="departmentName">Department Name</label>
+                <input type="text" id="departmentName" required>
+
+                <label for="departmentDescription">Description (optional)</label>
+                <textarea id="departmentDescription" rows="2"></textarea>
+
+                <button type="submit" id="departmentSubmitBtn">Add</button>
             </form>
             <ul id="departmentList"></ul>
         </div>
