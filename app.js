@@ -51,7 +51,7 @@ const personForm = document.getElementById('personForm');
 const departmentForm = document.getElementById('departmentForm');
 
 // Initialize button visibility
-addPersonBtn.style.display = 'none';
+// addPersonBtn.style.display = 'none';
 manageDepartmentsBtn.style.display = 'none';
 
 // Search functionality
@@ -172,7 +172,7 @@ restoreBtn.addEventListener('click', () => {
 toggleEditModeBtn.addEventListener('click', () => {
     editMode = !editMode;
     toggleEditModeBtn.textContent = editMode ? 'Disable Edit Mode' : 'Enable Edit Mode';
-    addPersonBtn.style.display = editMode ? 'inline-block' : 'none';
+    //addPersonBtn.style.display = editMode ? 'inline-block' : 'none';
     manageDepartmentsBtn.style.display = editMode ? 'inline-block' : 'none';
     renderPeople();
 });
