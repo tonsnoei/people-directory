@@ -2,6 +2,8 @@
 
 A privacy-first employee directory application built with vanilla HTML and JavaScript that runs entirely in your browser without requiring any server infrastructure.
 
+![](screenshot.png)
+
 ## Usage
 Open the [People Directory from Github Pages](https://tonsnoei.github.io/people-directory/)
 
@@ -29,7 +31,7 @@ Perfect for managing your team's directory with complete privacy, including down
 
 1. **Clone or download this repository**
    ```bash
-   git clone [your-repo-url]
+   git clone https://github.com/tonsnoei/people-directory.git
    ```
 
 2. **Open the application**
