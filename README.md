@@ -17,7 +17,7 @@ Perfect for managing your team's directory with complete privacy, including down
 
 - **🏢 Department Management** - Organize employees by departments
 - **📸 Image Upload & Resize** - Upload photos that are automatically resized to 400x400 pixels
-- **📍 Location Tracking** - Add location information for each employee
+- **📍 Location** - Add location information for each employee
 - **📝 Descriptions** - Include detailed descriptions and notes
 - **💾 Data Export/Import** - Backup and restore your directory data
 - **🔄 No Installation Required** - Run directly from the GitHub repository
@@ -102,7 +102,7 @@ Your privacy is guaranteed by design, not just by policy.
 
 
 # Development
-Created using [Aider]() and [Openrouter](https://openrouter.ai/)
+Created using [Aider](https://aider.chat/) and [Openrouter](https://openrouter.ai/)
 
 ```bash
 export OPENROUTER_API_KEY=sk-or-v1-....
